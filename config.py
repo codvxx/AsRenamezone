@@ -13,9 +13,9 @@ id_pattern = re.compile(r'^.\d+$')
 #Config details 
 class Config(object):
     # pyro client config
-    API_ID = os.environ.get("API_ID", "32541562")  # ⚠️ Required
-    API_HASH = os.environ.get("API_HASH", "e37e4432298d5a5eb4a6e32c18804283")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "8964651081:AAFfO-2dANGNvHKEW5hfkLZDhX6B8LeuhxU")  # ⚠️ Required
+    API_ID = os.environ.get("API_ID", "32541562")  
+    API_HASH = os.environ.get("API_HASH", "e37e4432298d5a5eb4a6e32c18804283")  
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "8964651081:AAFfO-2dANGNvHKEW5hfkLZDhX6B8LeuhxU")  
 
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
@@ -24,16 +24,19 @@ class Config(object):
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "tdanimehub")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://tdanimehub_db_user:3fPbmCdShf91FPZ9@storage1.gwel1e6.mongodb.net/?retryWrites=true&w=majority&appName=Storage1")  # ⚠️ Required
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://tdanimehub_db_user:3fPbmCdShf91FPZ9@storage1.gwel1e6.mongodb.net/?retryWrites=true&w=majority&appName=Storage1")  
 
     # other configs
     BOT_UPTIME = time.time()
     START_PIC = os.environ.get("START_PIC", "https://files.catbox.moe/acjr05.jpg")
     ADMIN = [int(admin) if id_pattern.search(
-        admin) else admin for admin in os.environ.get('ADMIN', '7006602588').split()]  # ⚠️ Required
+        admin) else admin for admin in os.environ.get('ADMIN', '7006602588').split()]  
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "Dramas_Fans_Group") # ⚠️ Required Username without @
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))  # ⚠️ Required
+    FORCE_SUB = os.environ.get("FORCE_SUB", "Dramas_Fans_Group") 
+    
+    # ⬇️ FIX APPLIED HERE ⬇️
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002521835919"))  
+    
     FLOOD = int(os.environ.get("FLOOD", '10'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
         "BANNED_USERS", "").split())
